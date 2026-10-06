@@ -211,7 +211,7 @@ function HistoryPage() {
         <div className="eyebrow">Section 01 / GABURA / 02</div>
         <h1>History</h1>
         <p>ভূমি, বন, মানুষ, নদী ও দুর্যোগ—এই পাঁচটি স্রোতের মধ্য দিয়ে গাবুরার ইতিহাসকে পড়া।</p>
-        <div className="history-meta"><span>Evidence-first history</span><span>Documented + Research needed</span></div>
+        <div className="history-meta"><span>Evidence-first geography</span><span>Documented + Research needed</span></div>
       </div>
     </section>
 
