@@ -26,9 +26,13 @@ export async function GET(request: NextRequest) {
   // the endpoint safely falls back to a normal MongoDB regex query.
   if (!type || type === "archive_layers") {
     const layerCollection = db.collection("archive_layers");
-    const indexReady = q
-      ? await layerCollection.listSearchIndexes("archive_layers_search").hasNext().catch(() => false)
-      : false;
+    const searchIndexes = q
+      ? await layerCollection.listSearchIndexes("archive_layers_search").toArray().catch(() => [])
+      : [];
+    const indexReady = searchIndexes.some((index) =>
+      index.name === "archive_layers_search" &&
+      (index.queryable === true || index.status === "READY")
+    );
 
     if (q && indexReady) {
       const compound: Record<string, unknown>[] = [
