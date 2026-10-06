@@ -42,7 +42,122 @@ const historySections: HistorySection[] = [
   ]}
 ];
 
-export default function HistoryPage() {
+
+
+type OriginEvidence = {
+  label: string;
+  title: string;
+  body: string;
+};
+
+const originEvidence: OriginEvidence[] = [
+  {
+    label: "01 / LOCAL TRADITION",
+    title: "‘গাব’ গাছের স্মৃতি",
+    body: "স্থানীয়ভাবে প্রচলিত একটি ব্যাখ্যায় বলা হয়, এই এলাকায় একসময় প্রচুর গাব গাছ ছিল। বনজীবী বাওয়ালি ও মৌয়ালরা জায়গাটিকে গাব-ঘেরা চর হিসেবে চিনতেন—সেখান থেকেই ‘গাবের চর’, ‘গাবুর চর’ এবং পরে ‘গাবুরা’ নামটি প্রচলিত হয়েছে বলে স্থানীয় বয়োজ্যেষ্ঠদের বর্ণনায় পাওয়া যায়।"
+  },
+  {
+    label: "02 / WHAT IS VERIFIED",
+    title: "নামের ব্যুৎপত্তি এখনো চূড়ান্ত নয়",
+    body: "বর্তমান সরকারি ইউনিয়ন প্রোফাইল ও সহজলভ্য গবেষণা-উৎসে ‘Gabura’ নামটি ঠিক কোন ঘটনা, ব্যক্তি বা শব্দ থেকে স্থায়ীভাবে এসেছে—তার নির্ভরযোগ্য primary record পাওয়া যায়নি। তাই গাব-গাছের ব্যাখ্যাকে এই আর্কাইভে প্রতিষ্ঠিত ঐতিহাসিক সত্য হিসেবে লেখা হচ্ছে না।"
+  },
+  {
+    label: "03 / HISTORICAL CONTEXT",
+    title: "নামের আগে ছিল ভূদৃশ্য",
+    body: "২০১৫ সালের UNICEF-সমর্থিত Profile of Gabura Union-এর ইতিহাস অংশে গাবুরার ভূমি গঠন, সুন্দরবন-সংলগ্ন পরিবেশ এবং ব্রিটিশ আমলে বনজ সম্পদ সংগ্রহ করতে আসা মানুষের বসতি গড়ে ওঠার কথা বলা হয়েছে। এই পরিবেশগত ইতিহাস নামের স্থানীয় স্মৃতিকে বোঝার গুরুত্বপূর্ণ context, কিন্তু নামটির সরাসরি প্রমাণ নয়।"
+  },
+  {
+    label: "04 / RESEARCH NEEDED",
+    title: "নামটি যাচাই করার পরবর্তী পথ",
+    body: "পুরোনো Revenue Survey / Cadastral map, mouza map, British-era gazetteer, settlement record, খাজনা বা জমির দলিল, পুরোনো ডাক/প্রশাসনিক নথি এবং প্রবীণদের oral history পাশাপাশি পরীক্ষা করলে ‘Gabura’ নামের প্রাচীন ব্যবহার কখন ও কীভাবে শুরু হয়েছিল তা আরও নির্ভরযোগ্যভাবে নির্ণয় করা সম্ভব হতে পারে।"
+  }
+];
+
+function OriginOfNamePage() {
+  return <main>
+    <header className="nav"><div className="wrap history-nav">
+      <Link className="brand" href="/">GABURA ARCHIVE</Link>
+      <Link className="navlink" href="/gabura">← SECTION 01</Link>
+    </div></header>
+
+    <section className="origin-hero">
+      <div className="wrap">
+        <div className="eyebrow">Section 01 / GABURA / 03</div>
+        <h1>Origin<br/><em>of Name</em></h1>
+        <p>একটি নামের ভেতরেও ভূদৃশ্য, বন, মানুষের স্মৃতি এবং সময়ের স্তর জমে থাকে।</p>
+        <div className="origin-meta"><span>Local tradition</span><span>Evidence status: Unconfirmed</span></div>
+      </div>
+    </section>
+
+    <section className="origin-lead">
+      <div className="wrap origin-lead-grid">
+        <div>
+          <div className="eyebrow">The question</div>
+          <h2>‘গাবুরা’ নামটি কোথা থেকে এল?</h2>
+        </div>
+        <div>
+          <p>এই প্রশ্নের সহজ একটি স্থানীয় উত্তর আছে—গাব গাছের সঙ্গে নামটির সম্পর্ক। কিন্তু একটি archive-এর কাজ শুধু পরিচিত গল্প পুনরাবৃত্তি করা নয়; গল্পটি কোথা থেকে এসেছে, কোন অংশটি স্মৃতি, আর কোন অংশটি দলিলে পাওয়া যায়—সেটিও আলাদা করে দেখানো।</p>
+          <p className="origin-note">এই কারণে নিচের ব্যাখ্যাগুলোকে একই confidence level-এ রাখা হয়নি।</p>
+        </div>
+      </div>
+    </section>
+
+    <section className="origin-evidence">
+      <div className="wrap">
+        {originEvidence.map((item, i) => <article className="origin-item" key={item.label}>
+          <div className="origin-number">0{i + 1}</div>
+          <div className="origin-copy">
+            <div className="eyebrow">{item.label}</div>
+            <h2>{item.title}</h2>
+            <p>{item.body}</p>
+          </div>
+        </article>)}
+      </div>
+    </section>
+
+    <section className="origin-language">
+      <div className="wrap">
+        <div className="eyebrow">A working hypothesis</div>
+        <div className="origin-language-grid">
+          <div><span>গাব</span><small>স্থানীয় গাছের নাম</small></div>
+          <div className="arrow">→</div>
+          <div><span>গাবের চর / গাবুর চর</span><small>স্থানীয় স্থান-নাম হিসেবে প্রচলনের সম্ভাব্য ধাপ</small></div>
+          <div className="arrow">→</div>
+          <div><span>গাবুরা</span><small>বর্তমান নাম</small></div>
+        </div>
+        <p className="origin-disclaimer">এটি একটি গবেষণামূলক hypothesis—প্রমাণিত etymology নয়। পুরোনো মানচিত্র বা দলিল পাওয়া গেলে এই sequence পরিবর্তিত হতে পারে।</p>
+      </div>
+    </section>
+
+    <section className="origin-research">
+      <div className="wrap origin-research-box">
+        <div>
+          <div className="eyebrow">Archive research queue</div>
+          <h2>যে প্রমাণগুলো পাওয়া গেলে নামের ইতিহাস শক্ত হবে</h2>
+        </div>
+        <div className="origin-checklist">
+          {["British-era gazetteer / district account","Revenue Survey & cadastral maps","Mouza map and old settlement records","Early land deeds / khatian references","Old postal and administrative records","Elder oral histories with names + dates","Old photographs, school registers, family papers","First known written spelling of ‘Gabura’"].map((x,i)=><div key={x}><span>{String(i+1).padStart(2,"0")}</span>{x}</div>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="origin-source">
+      <div className="wrap">
+        <div className="eyebrow">Source note</div>
+        <p>বর্তমান ভিত্তি হিসেবে ব্যবহার করা হয়েছে Gabura Union-এর সরকারি ২০১৫/২০১৬ প্রকাশিত প্রোফাইল, যেখানে ইউনিয়নের ঐতিহাসিক background ও British-period settlement-এর কথা আছে। নামের ‘গাব গাছ’ ব্যাখ্যাটি স্থানীয় tradition হিসেবে রাখা হয়েছে; স্বাধীন primary source না পাওয়া পর্যন্ত এটিকে fact হিসেবে চিহ্নিত করা হয়নি।</p>
+      </div>
+    </section>
+  </main>;
+}
+
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  if (slug === "origin-of-name") return <OriginOfNamePage />;
+
+  return <HistoryPage />;
+}
+
+function HistoryPage() {
   return <main>
     <header className="nav"><div className="wrap history-nav">
       <Link className="brand" href="/">GABURA ARCHIVE</Link>
