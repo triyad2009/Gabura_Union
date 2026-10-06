@@ -149,3 +149,39 @@ a{-webkit-tap-highlight-color:transparent}
 .layer-footer a:hover,.footer a:hover{color:var(--text)}
 @media(max-width:760px){.wrap{width:min(var(--content),calc(100% - 28px))}.section-intro{grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}.climate-grid{grid-template-columns:1fr}.climate-card{min-height:235px;padding:1.5rem}.climate-card h3{font-size:2.4rem}.nav{height:64px}.home-nav,.history-nav{min-height:64px}}
 @media(prefers-reduced-motion:reduce){.climate-card,.archive-card,.people-card{transform:none!important}}
+
+
+/* SEARCH */
+.search-page{min-height:100vh;background:#080909;color:var(--text)}
+.search-hero{padding:8rem 0 5rem;border-bottom:1px solid rgba(247,247,245,.09);background:radial-gradient(circle at 80% 12%,rgba(232,161,91,.1),transparent 30%),#080909}
+.search-back{display:inline-block;color:rgba(247,247,245,.42);text-decoration:none;font-size:.7rem;letter-spacing:.1em;margin-bottom:7rem}
+.search-back:hover{color:var(--text)}
+.search-hero h1{font-size:clamp(5rem,13vw,11rem);line-height:.78;letter-spacing:-.07em;margin:1rem 0 2rem}
+.search-hero h1 em{font-style:normal;font-weight:300;opacity:.62}
+.search-intro{max-width:700px;color:rgba(247,247,245,.58);line-height:1.85;font-size:1.05rem}
+.search-form{display:grid;grid-template-columns:1fr auto;gap:.7rem;margin-top:3rem;max-width:920px}
+.search-form input{min-width:0;background:#101213;border:1px solid rgba(247,247,245,.14);border-radius:0;padding:1.15rem 1.2rem;color:var(--text);font:inherit;outline:none}
+.search-form input:focus{border-color:rgba(232,161,91,.55);box-shadow:0 0 0 3px rgba(232,161,91,.08)}
+.search-form button{border:1px solid rgba(247,247,245,.16);background:var(--text);color:#080909;padding:0 1.5rem;font:inherit;cursor:pointer}
+.search-filters{display:flex;gap:1rem;margin-top:1rem;max-width:920px}
+.search-filters label{display:grid;gap:.45rem;flex:1}
+.search-filters span{font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(247,247,245,.35)}
+.search-filters select{background:#101213;border:1px solid rgba(247,247,245,.1);color:rgba(247,247,245,.7);padding:.8rem;font:inherit}
+.search-results{padding:5rem 0 8rem}
+.search-results-head{display:flex;justify-content:space-between;gap:3rem;align-items:end;margin-bottom:2rem}
+.search-results-head h2{font-size:clamp(2.5rem,5vw,5rem);line-height:.9;letter-spacing:-.055em;margin:.8rem 0 0}
+.search-results-head>p{max-width:330px;color:rgba(247,247,245,.4);line-height:1.7;margin:0}
+.search-list{border-top:1px solid rgba(247,247,245,.1)}
+.search-result{display:grid;grid-template-columns:60px 1fr auto;gap:1.5rem;align-items:center;padding:1.7rem 0;border-bottom:1px solid rgba(247,247,245,.08)}
+.search-result-index{font-size:.68rem;color:rgba(247,247,245,.28)}
+.search-result-body{min-width:0}
+.search-result-meta{display:flex;gap:.6rem;flex-wrap:wrap}
+.search-result-meta span{font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(247,247,245,.34)}
+.search-result h3{font-family:"Playfair Display","Noto Sans Bengali",serif;font-size:clamp(1.7rem,3vw,2.8rem);line-height:1;margin:.55rem 0}
+.search-result p{color:rgba(247,247,245,.48);line-height:1.65;margin:0;max-width:760px}
+.search-result a,.search-result-state{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(247,247,245,.5);text-decoration:none}
+.search-result a:hover{color:var(--text)}
+.search-empty{border:1px solid rgba(247,247,245,.09);padding:3rem;color:rgba(247,247,245,.5);display:grid;gap:.6rem}
+.search-empty strong{color:var(--text);font-size:1.2rem}
+@media(max-width:700px){.search-hero{padding-top:6rem}.search-back{margin-bottom:5rem}.search-form{grid-template-columns:1fr}.search-form button{padding:1rem}.search-filters{display:grid;grid-template-columns:1fr 1fr}.search-results-head{display:grid;gap:1rem}.search-result{grid-template-columns:35px 1fr}.search-result>a,.search-result-state{grid-column:2}.search-result h3{font-size:2rem}}
+@media(max-width:480px){.search-hero h1{font-size:4.5rem}.search-filters{grid-template-columns:1fr}.search-result{gap:.8rem}.search-result-index{font-size:.6rem}}
