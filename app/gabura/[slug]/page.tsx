@@ -162,9 +162,39 @@ function OriginOfNamePage() {
   </main>;
 }
 
+
+type GeographyCard={label:string;title:string;body:string;status:"Official profile"|"Source conflict"|"Research needed"};
+const geographyCards:GeographyCard[]=[
+{label:"01 / POSITION",title:"সুন্দরবনের প্রান্তে, নদীবেষ্টিত ভূখণ্ড",body:"গাবুরা শ্যামনগর উপজেলার দক্ষিণ-পূর্ব অংশে, সুন্দরবনের সন্নিকটে অবস্থিত। ২০১৫ সালের ইউনিয়ন profile-এ Kholpetua River-কে ইউনিয়ন ও মূল ভূখণ্ডের মধ্যে একটি গুরুত্বপূর্ণ প্রাকৃতিক বিভাজক হিসেবে বর্ণনা করা হয়েছে।",status:"Official profile"},
+{label:"02 / SOUTH",title:"দক্ষিণে সুন্দরবন",body:"সরকারি ইউনিয়ন পরিচিতি পাতায় গাবুরার দক্ষিণে সুন্দরবনের অবস্থান উল্লেখ করা হয়েছে। এই অবস্থান গাবুরার জীবিকা, বনসম্পদ, জলবায়ু ঝুঁকি ও যোগাযোগের ইতিহাস বোঝার জন্য গুরুত্বপূর্ণ।",status:"Official profile"},
+{label:"03 / NORTH & WEST",title:"খোলপেটুয়া নদী ও মূল ভূখণ্ডের সম্পর্ক",body:"সরকারি ইউনিয়ন পেজে উত্তর ও পশ্চিমে খোলপেটুয়া নদীর কথা বলা হয়েছে। ২০১৫ সালের profile-ও বলছে, Kholpetua River গাবুরাকে mainland থেকে আলাদা করে।",status:"Official profile"},
+{label:"04 / EAST",title:"পূর্ব সীমানায় উৎসভেদে পার্থক্য",body:"সরকারি ইউনিয়ন পেজে পূর্বে কয়রা উপজেলার দক্ষিণ বেদকাশি ইউনিয়নের কথা আছে। কিন্তু ২০১৫ সালের profile-এর Geography অংশে পূর্ব দিকে Kapotakkha River ও Khulna district-এর উল্লেখ রয়েছে। এই দুই বর্ণনাকে একত্র করে একটি নির্দিষ্ট boundary fact বানানো হয়নি।",status:"Source conflict"},
+{label:"05 / LAND",title:"আয়তন: দুটি সরকারি/প্রকাশিত সংখ্যা",body:"ইউনিয়ন পরিষদের বর্তমান তথ্যপেজে আয়তন ৩৩ বর্গকিলোমিটার বলা হয়েছে। অন্যদিকে ২০১৫ সালের UNICEF-supported Profile of Gabura Union-এ ৪১.২৬ বর্গকিলোমিটার দেওয়া আছে। তাই archive-এ source এবং year ছাড়া একটি সংখ্যাকে চূড়ান্ত বলা হবে না।",status:"Source conflict"},
+{label:"06 / TERRAIN",title:"পলি, জোয়ার-ভাটা ও উপকূলীয় ভূমি",body:"২০১৫ সালের profile-এর historical/geographic description অনুযায়ী নদীবাহিত পলি জমে ভূমি গঠনের সঙ্গে গাবুরার ভূদৃশ্যের সম্পর্ক আছে। উপকূলীয় জোয়ার, জলাবদ্ধতা ও লবণাক্ততার ঝুঁকি এই ভূপ্রকৃতিকে একটি dynamic landscape হিসেবে তৈরি করেছে।",status:"Official profile"},
+{label:"07 / ACCESS",title:"Hard-to-reach geography",body:"২০১৫ সালের profile গাবুরাকে hard-to-reach area হিসেবে চিহ্নিত করে। internal communication দুর্বল এবং কিছু গ্রামের সঙ্গে soling/earthen road ও van, cycle, motorcycle-নির্ভর যোগাযোগের কথা সেখানে নথিবদ্ধ আছে।",status:"Official profile"},
+{label:"08 / MAP RESEARCH",title:"সীমানা চূড়ান্ত করার জন্য GIS archive প্রয়োজন",body:"পুরোনো mouza/cadastral map, বর্তমান cadastral boundary, satellite imagery এবং সরকারি ইউনিয়ন map একই reference system-এ মিলিয়ে একটি versioned boundary map তৈরি করা হবে। প্রতিটি map-এর source date ও scale সংরক্ষণ করা হবে।",status:"Research needed"}
+];
+
+function GeographyPage(){
+return <main>
+<header className="nav"><div className="wrap history-nav"><Link className="brand" href="/">GABURA ARCHIVE</Link><Link className="navlink" href="/gabura">← SECTION 01</Link></div></header>
+<section className="geo-hero"><div className="wrap">
+<div className="eyebrow">Section 01 / GABURA / 04</div><h1>Geography</h1>
+<p>নদী, বন, চর, পলি, জোয়ার এবং মানুষের বসতি—গাবুরার ভূগোল একটি স্থির মানচিত্র নয়; এটি পরিবর্তনশীল উপকূলীয় landscape।</p>
+<div className="geo-stats"><div><b>33 km²</b><span>Union page figure</span></div><div><b>41.26 km²</b><span>2015 profile figure</span></div><div><b>15</b><span>Villages</span></div><div><b>4</b><span>Mouzas</span></div></div>
+</div></section>
+<section className="geo-intro"><div className="wrap geo-intro-grid"><div><div className="eyebrow">Read the map carefully</div><h2>একটি boundary নয়—source অনুযায়ী boundary</h2></div><p>গাবুরার ভূগোলের ক্ষেত্রে সবচেয়ে গুরুত্বপূর্ণ বিষয় হলো source conflict লুকিয়ে না রাখা। বর্তমান ইউনিয়ন পেজ ও ২০১৫ সালের profile-এ পূর্ব সীমানা ও আয়তন নিয়ে পার্থক্য আছে। Archive-এর কাজ হলো সেই পার্থক্যটিও সংরক্ষণ করা।</p></div></section>
+<section className="geo-cards"><div className="wrap">{geographyCards.map((item,i)=><article className="geo-card" key={item.label}><div className="geo-card-index">0{i+1}</div><div><div className="eyebrow">{item.label}</div><h2>{item.title}</h2><p>{item.body}</p><span className={"geo-status "+(item.status==="Source conflict"?"conflict":"")}>{item.status}</span></div></article>)}</div></section>
+<section className="geo-boundary"><div className="wrap"><div className="eyebrow">Boundary snapshot</div><div className="boundary-grid"><div><small>SOUTH</small><strong>সুন্দরবন</strong></div><div><small>NORTH / WEST</small><strong>খোলপেটুয়া নদী</strong></div><div><small>EAST</small><strong>দক্ষিণ বেদকাশি / source conflict</strong></div></div><p>এই snapshot বর্তমান ইউনিয়ন profile-এর সঙ্গে ২০১৫ সালের profile-এর তথ্য পাশাপাশি রাখে। এটি legal cadastral boundary map নয়।</p></div></section>
+<section className="geo-research"><div className="wrap geo-research-box"><div><div className="eyebrow">Geography archive roadmap</div><h2>পরের ধাপে যে map layerগুলো তৈরি হবে</h2></div><div className="geo-checklist">{["Current union boundary","Mouza boundary + mouza names","Kholpetua River & connected waterways","Village / ward locations","Polder & embankment lines","Road & ferry/boat access","Cyclone shelter locations","Historical map layers"].map((x,i)=><div key={x}><span>{String(i+1).padStart(2,"0")}</span>{x}</div>)}</div></div></section>
+<section className="geo-source"><div className="wrap"><div className="eyebrow">Source discipline</div><p>মূল উৎস: Gabura Union-এর সরকারি “এক নজরে গাবুরা” তথ্যপেজ এবং সেপ্টেম্বর ২০১৫-এর UNICEF-supported Profile of Gabura Union। দুই উৎসে পার্থক্য থাকলে তা source conflict হিসেবে চিহ্নিত করা হয়েছে।</p></div></section>
+</main>
+}
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   if (slug === "origin-of-name") return <OriginOfNamePage />;
+  if (slug === "geography") return <GeographyPage />;
 
   return <HistoryPage />;
 }
