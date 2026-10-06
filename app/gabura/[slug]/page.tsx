@@ -191,7 +191,104 @@ return <main>
 </main>
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+
+
+type VillageRecord = {
+  ward: string;
+  names: string[];
+  status: "Government profile" | "Research needed";
+  note: string;
+};
+
+const mouzaRecords = [
+  ["01","Dumuria","Core mouza","2015 government gazette / union profile"],
+  ["02","Gabura","Core mouza","2015 government gazette / union profile"],
+  ["03","Khalisha Bunia","Core mouza","2015 government gazette / union profile"],
+  ["04","Parshemari","Core mouza","2015 government gazette / union profile"]
+];
+
+const villageRecords: VillageRecord[] = [
+  {ward:"01",names:["Kolpatua / Kholpetua"],status:"Government profile",note:"2015 Union Profile-এ Ward 01-এর village হিসেবে Kolpatua পাওয়া যায়।"},
+  {ward:"02",names:["Gabura"],status:"Government profile",note:"Ward 02-এর village হিসেবে Gabura নথিবদ্ধ।"},
+  {ward:"03",names:["Jhalakhali","Nabu Bunia","Char Jhalakhali"],status:"Government profile",note:"২০১৫ profile-এর village tables-এ তিনটি locality/village name পাওয়া যায়।"},
+  {ward:"04",names:["Lakshmikhali","Central Khalisha Bunia"],status:"Government profile",note:"Ward 04-এর দুইটি নাম profile-এ আলাদাভাবে এসেছে।"},
+  {ward:"05",names:["Parshemari","Napitkhali","Gagramari"],status:"Government profile",note:"Ward 05-এর তিনটি নাম profile-এ পাওয়া যায়।"},
+  {ward:"06",names:["Chandnimukha","10 No-Sora"],status:"Government profile",note:"Ward 06-এর Chandnimukha ও 10 No-Sora profile-এ নথিবদ্ধ।"},
+  {ward:"07",names:["Dumuria"],status:"Government profile",note:"Ward 07-এর village হিসেবে Dumuria নথিবদ্ধ।"},
+  {ward:"08",names:["Khalisha Bunia","Chakbara"],status:"Government profile",note:"Ward 08-এর দুইটি নাম profile-এ পাওয়া যায়।"},
+  {ward:"09",names:["Sora"],status:"Government profile",note:"Ward 09-এর village হিসেবে Sora নথিবদ্ধ।"}
+];
+
+const localityRecords = [
+  ["01","Boro Gabura","Locality / commercial area","Current administrative status needs verification"],
+  ["02","Chhota Gabura","Locality","Current administrative status needs verification"],
+  ["03","Jelekhali / Jaliakhali","Locality / historical spelling","Old and current spelling should be recorded together"],
+  ["04","Lebubunia / Lebunia","Locality / spelling variant","Government records show variant usage"],
+  ["05","Porakatla","Locality","Needs GIS / field verification"],
+  ["06","Kalibari","Locality","Needs GIS / field verification"],
+  ["07","Chandni Mukha / Chandnimukha","Locality / spelling variant","Use source spelling with date"],
+  ["08","Laxmikhali / Lakshmikhali","Locality / spelling variant","Use source spelling with date"]
+];
+
+function VillagesAndMouzasPage(){
+  return <main>
+    <header className="nav"><div className="wrap history-nav">
+      <Link className="brand" href="/">GABURA ARCHIVE</Link>
+      <Link className="navlink" href="/gabura">← SECTION 01</Link>
+    </div></header>
+
+    <section className="villages-hero"><div className="wrap">
+      <div className="eyebrow">Section 01 / GABURA / 06</div>
+      <h1>Villages<br/><em>& Mouzas</em></h1>
+      <p>একটি দ্বীপ-ইউনিয়নের নামগুলোকে শুধু একটি তালিকা হিসেবে নয়—মৌজা, ওয়ার্ড, গ্রাম এবং স্থানীয় পাড়া-মহল্লার আলাদা স্তর হিসেবে সংরক্ষণ করা।</p>
+      <div className="villages-meta"><span>4 Core Mouzas</span><span>15 Government-listed villages</span><span>Localities tracked separately</span></div>
+    </div></section>
+
+    <section className="villages-lead"><div className="wrap villages-lead-grid">
+      <div><div className="eyebrow">The archive rule</div><h2>মৌজা, গ্রাম আর পাড়া—এক জিনিস নয়।</h2></div>
+      <div><p>সরকারি Gabura Union profile-এ ইউনিয়নের <strong>১৫টি গ্রাম</strong> ও <strong>৪টি মৌজা</strong> বলা হয়েছে। কিন্তু ward-wise tables-এ একাধিক village/locality name দেখা যায়। তাই archive-এ legal/revenue identity, ward identity এবং everyday locality আলাদা entity হিসেবে রাখা হবে।</p><p className="villages-note">কোনো স্থানীয় নামকে শুধু পরিচিতির কারণে “মৌজা” বা “সরকারি গ্রাম” বানানো হবে না।</p></div>
+    </div></section>
+
+    <section className="mouza-section"><div className="wrap">
+      <div className="eyebrow">01 / CORE MOUZA REGISTER</div>
+      <h2>চারটি মূল মৌজা</h2>
+      <div className="mouza-grid">{mouzaRecords.map(([n,name,type,source])=><article key={name}><span>{n}</span><h3>{name}</h3><b>{type}</b><p>{source}</p></article>)}</div>
+    </div></section>
+
+    <section className="village-section"><div className="wrap">
+      <div className="eyebrow">02 / WARD & VILLAGE REGISTER</div>
+      <h2>ওয়ার্ডভিত্তিক নামের register</h2>
+      <div className="village-list">{villageRecords.map(item=><article key={item.ward}><div className="village-ward">{item.ward}<small>WARD</small></div><div><span className="village-status">{item.status}</span><h3>{item.names.join(" · ")}</h3><p>{item.note}</p></div></article>)}</div>
+    </div></section>
+
+    <section className="locality-section"><div className="wrap">
+      <div className="eyebrow">03 / LOCALITIES & NEIGHBORHOODS</div>
+      <h2>মানুষের দৈনন্দিন পরিচয়ের নামগুলো</h2>
+      <p className="section-intro">নিচের নামগুলো archive-এ locality layer হিসেবে রাখা হচ্ছে। এগুলোকে ৪টি core mouza বা ১৫টি সরকারি village-এর সঙ্গে স্বয়ংক্রিয়ভাবে সমান করা হচ্ছে না।</p>
+      <div className="locality-grid">{localityRecords.map(([n,name,type,note])=><article key={name}><span>{n}</span><h3>{name}</h3><b>{type}</b><p>{note}</p></article>)}</div>
+    </div></section>
+
+    <section className="villages-map"><div className="wrap">
+      <div className="eyebrow">04 / SPATIAL MODEL</div>
+      <h2>একটি নামের একাধিক identity layer থাকতে পারে</h2>
+      <div className="identity-flow"><div><small>ADMIN</small><strong>Union</strong></div><i>→</i><div><small>REVENUE</small><strong>Mouza</strong></div><i>→</i><div><small>LOCAL GOVT</small><strong>Ward</strong></div><i>→</i><div><small>SETTLEMENT</small><strong>Village</strong></div><i>→</i><div><small>LOCAL USE</small><strong>Para / Locality</strong></div></div>
+      <p>এই hierarchy-র প্রতিটি স্তরে source, date, spelling এবং map geometry আলাদাভাবে রাখা হবে।</p>
+    </div></section>
+
+    <section className="villages-research"><div className="wrap villages-research-grid">
+      <div><div className="eyebrow">Research queue</div><h2>এখনও যেগুলো যাচাই করতে হবে</h2></div>
+      <div className="villages-checklist">{["১৫টি সরকারি গ্রামের current spelling ও official code","প্রতিটি গ্রামের mouza relationship","JL number / cadastral reference","Ward polygon ও village polygon আলাদা করা","Boro/Chhota Gabura-এর administrative status","Jelekhali / Jaliakhali historical spelling","Lebubunia / Lebunia spelling history","Porakatla ও Kalibari GPS verification","Local para/mohalla names through field interviews","Current village-wise population and household count","Historical village boundary changes","Community-supplied names with consent + source date"].map((x,i)=><div key={x}><span>{String(i+1).padStart(2,"0")}</span>{x}</div>)}</div>
+    </div></section>
+
+    <section className="villages-source"><div className="wrap">
+      <div className="eyebrow">Source discipline</div>
+      <p><strong>Primary baseline:</strong> Gabura Union-এর সরকারি “এক নজরে গাবুরা” page, September 2015 UNICEF-supported Profile of Gabura Union এবং সরকারি village/population records। সরকারি profile-এ ১৫টি village ও ৪টি mouza বলা হয়েছে এবং ward-wise tables-এ village names দেওয়া আছে। citeturn0search0turn0search1</p>
+      <p><strong>Important distinction:</strong> Boro Gabura, Chhota Gabura, Jelekhali, Lebubunia, Porakatla, Kalibari ইত্যাদি নাম পাওয়া গেলেই সেগুলোকে automatically “official village” বলা হবে না। Locality status আলাদা verification layer-এ থাকবে।</p>
+      <p className="villages-disclaimer">Archive rule: <strong>Mouza ≠ Ward ≠ Village ≠ Locality ≠ Para/Mohalla.</strong> Source conflict থাকলে source-specific spelling ও date দুটোই সংরক্ষণ করা হবে।</p>
+    </div></section>
+  </main>
+}
+\nexport default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   if (slug === "origin-of-name") return <OriginOfNamePage />;
   if (slug === "geography") return <GeographyPage />;\n  if (slug === "rivers-and-waterways") return <RiversAndWaterwaysPage />;\n  if (slug === "villages-and-mouzas") return <VillagesAndMouzasPage />;\n  if (slug === "population") return <PopulationPage />;\n  if (slug === "administration") return <AdministrationPage />;\n  if (slug === "maps") return <MapsPage />;\n  if (slug === "timeline") return <HistoricalTimelinePage />;
