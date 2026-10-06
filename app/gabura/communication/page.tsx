@@ -152,9 +152,9 @@ export default function CommunicationPage() {
     <section className="communication-source">
       <div className="wrap">
         <div className="eyebrow">Source discipline</div>
-        <p><strong>Primary baseline:</strong> Gabura Union-এর সরকারি “এক নজরে গাবুরা” পেজ এবং September 2015 UNICEF-supported Profile of Gabura Union। ওই profile-এ Gabura-কে hard-to-reach বলা হয়েছে এবং village-level distance/transport modes দেওয়া আছে। citeturn1search1</p>
-        <p><strong>Historical transport context:</strong> 2016 FARU research-এ Gabura-র island condition, boat communication, internal road damage এবং WAPDA bund-এর transport role নথিবদ্ধ হয়েছে। এটিকে historical snapshot হিসেবে রাখা হবে। citeturn1search13</p>
-        <p><strong>Recent field context:</strong> Asia Foundation-এর participatory research-এ Kholpetua crossing এবং network সমস্যার স্থানীয় অভিজ্ঞতা উঠে এসেছে। citeturn1search3</p>
+        <p><strong>Primary baseline:</strong> Gabura Union-এর সরকারি “এক নজরে গাবুরা” পেজ এবং September 2015 UNICEF-supported Profile of Gabura Union। ওই profile-এ Gabura-কে hard-to-reach বলা হয়েছে এবং village-level distance/transport modes দেওয়া আছে।</p>
+        <p><strong>Historical transport context:</strong> 2016 FARU research-এ Gabura-র island condition, boat communication, internal road damage এবং WAPDA bund-এর transport role নথিবদ্ধ হয়েছে। এটিকে historical snapshot হিসেবে রাখা হবে।</p>
+        <p><strong>Recent field context:</strong> Asia Foundation-এর participatory research-এ Kholpetua crossing এবং network সমস্যার স্থানীয় অভিজ্ঞতা উঠে এসেছে।</p>
         <p className="communication-disclaimer">এই পেজের পুরোনো route/road figures বর্তমান infrastructure-এর দাবি নয়। বর্তমান access map তৈরি হলে survey date, GPS/source এবং season অবশ্যই record করতে হবে।</p>
       </div>
     </section>
