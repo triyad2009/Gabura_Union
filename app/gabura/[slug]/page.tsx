@@ -194,7 +194,7 @@ return <main>
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   if (slug === "origin-of-name") return <OriginOfNamePage />;
-  if (slug === "geography") return <GeographyPage />;\n  if (slug === "rivers-and-waterways") return <RiversAndWaterwaysPage />;\n  if (slug === "villages-and-mouzas") return <VillagesAndMouzasPage />;\n  if (slug === "population") return <PopulationPage />;
+  if (slug === "geography") return <GeographyPage />;\n  if (slug === "rivers-and-waterways") return <RiversAndWaterwaysPage />;\n  if (slug === "villages-and-mouzas") return <VillagesAndMouzasPage />;\n  if (slug === "population") return <PopulationPage />;\n  if (slug === "administration") return <AdministrationPage />;
 
   return <HistoryPage />;
 }
