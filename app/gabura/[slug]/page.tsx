@@ -95,7 +95,7 @@ function OriginOfNamePage() {
         <div className="eyebrow">Section 01 / GABURA / 03</div>
         <h1>Origin<br/><em>of Name</em></h1>
         <p>একটি নামের ভেতরেও ভূদৃশ্য, বন, মানুষের স্মৃতি এবং সময়ের স্তর জমে থাকে।</p>
-        <div className="origin-meta"><span>Local tradition</span><span>Evidence status: Unconfirmed</span></div>
+        <div className="origin-meta"><span>Local tradition</span><span>Written record found</span><span>Origin still unconfirmed</span></div>
       </div>
     </section>
 
@@ -127,7 +127,7 @@ function OriginOfNamePage() {
 
     <section className="origin-language">
       <div className="wrap">
-        <div className="eyebrow">A working hypothesis</div>
+        <div className="eyebrow">Working hypothesis / Not established fact</div>
         <div className="origin-language-grid">
           <div><span>গাব</span><small>স্থানীয় গাছের নাম</small></div>
           <div className="arrow">→</div>
@@ -150,6 +150,8 @@ function OriginOfNamePage() {
         </div>
       </div>
     </section>
+
+    <section className="origin-confidence"><div className="wrap origin-confidence-grid"><div><div className="eyebrow">Evidence ladder</div><h2>আমরা কী জানি—আর কী জানি না?</h2></div><div className="confidence-list"><div><b>HIGHER CONFIDENCE</b><span>‘Gabura’ নামটি প্রশাসনিক/ভূমি-নথিতে ব্যবহৃত হয়েছে।</span></div><div><b>MEDIUM</b><span>স্থানীয় settlement history ও পুরোনো বসতির স্মৃতি পাওয়া যায়।</span></div><div><b>UNCONFIRMED</b><span>‘গাব’ গাছ থেকে নামটির উৎপত্তি—এখনো primary evidence নেই।</span></div></div></div></section>
 
     <section className="origin-source">
       <div className="wrap">
