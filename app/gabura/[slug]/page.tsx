@@ -67,9 +67,19 @@ const originEvidence: OriginEvidence[] = [
     body: "২০১৫ সালের UNICEF-সমর্থিত Profile of Gabura Union-এর ইতিহাস অংশে গাবুরার ভূমি গঠন, সুন্দরবন-সংলগ্ন পরিবেশ এবং ব্রিটিশ আমলে বনজ সম্পদ সংগ্রহ করতে আসা মানুষের বসতি গড়ে ওঠার কথা বলা হয়েছে। এই পরিবেশগত ইতিহাস নামের স্থানীয় স্মৃতিকে বোঝার গুরুত্বপূর্ণ context, কিন্তু নামটির সরাসরি প্রমাণ নয়।"
   },
   {
-    label: "04 / RESEARCH NEEDED",
+    label: "04 / WRITTEN RECORD",
+    title: "‘Gabura’ নামটি নথিতে প্রতিষ্ঠিত",
+    body: "সরকারি গেজেটের ২০১৫ সালের একটি তালিকায় গাবুরা ইউনিয়নের পূর্ণ মৌজাগুলোর একটি হিসেবে ‘গাবুরা (Gabura)’ নামটি স্পষ্টভাবে নথিবদ্ধ আছে। এটি প্রমাণ করে যে নামটি প্রশাসনিক/ভূমি-পরিচয়ের লিখিত ব্যবহারে ছিল; তবে ওই নথি নামটির প্রথম ব্যবহার বা ব্যুৎপত্তি ব্যাখ্যা করে না।"
+  },
+  {
+    label: "05 / LOCAL MEMORY",
+    title: "দুইশ বছরের বসতির দাবি",
+    body: "গাবুরা গোপাল লক্ষ্মী মেমোরিয়াল মাধ্যমিক বিদ্যালয়ের প্রতিষ্ঠার ইতিহাসে বলা হয়েছে, পূর্বপুরুষদের শ্রম ও অর্থের মাধ্যমে প্রায় দুইশ বছরেরও আগে গাবুরা আবাদ হয়েছিল। এটি একটি স্থানীয় প্রাতিষ্ঠানিক historical narrative—নামের উৎপত্তির প্রমাণ নয়। তাই archive-এ settlement history ও name-origin evidence আলাদা রাখা হবে।"
+  },
+  {
+    label: "06 / RESEARCH NEEDED",
     title: "নামটি যাচাই করার পরবর্তী পথ",
-    body: "পুরোনো Revenue Survey / Cadastral map, mouza map, British-era gazetteer, settlement record, খাজনা বা জমির দলিল, পুরোনো ডাক/প্রশাসনিক নথি এবং প্রবীণদের oral history পাশাপাশি পরীক্ষা করলে ‘Gabura’ নামের প্রাচীন ব্যবহার কখন ও কীভাবে শুরু হয়েছিল তা আরও নির্ভরযোগ্যভাবে নির্ণয় করা সম্ভব হতে পারে।"
+    body: "পুরোনো Revenue Survey / Cadastral map, mouza map, British-era gazetteer, settlement record, খাজনা বা জমির দলিল, পুরোনো ডাক/প্রশাসনিক নথি এবং প্রবীণদের oral history পাশাপাশি পরীক্ষা করতে হবে। বিশেষ লক্ষ্য হবে—বর্তমান ‘Gabura’ বানানের আগের কোনো spelling বা একই নামের পুরোনো স্থান-চিহ্ন পাওয়া যায় কি না।"
   }
 ];
 
@@ -144,7 +154,7 @@ function OriginOfNamePage() {
     <section className="origin-source">
       <div className="wrap">
         <div className="eyebrow">Source note</div>
-        <p>বর্তমান ভিত্তি হিসেবে ব্যবহার করা হয়েছে Gabura Union-এর সরকারি ২০১৫/২০১৬ প্রকাশিত প্রোফাইল, যেখানে ইউনিয়নের ঐতিহাসিক background ও British-period settlement-এর কথা আছে। নামের ‘গাব গাছ’ ব্যাখ্যাটি স্থানীয় tradition হিসেবে রাখা হয়েছে; স্বাধীন primary source না পাওয়া পর্যন্ত এটিকে fact হিসেবে চিহ্নিত করা হয়নি।</p>
+        <p>এই পেজে তিন ধরনের evidence আলাদা রাখা হয়েছে: Gabura Union-এর সরকারি profile-এ থাকা historical background, ২০১৫ সালের সরকারি গেজেটে ‘Gabura’ মৌজার লিখিত উপস্থিতি, এবং Gabura G. L. M. Secondary School-এর স্থানীয় settlement narrative। ‘গাব গাছ’ থেকে নাম এসেছে—এই ব্যাখ্যাটি এখনো local tradition; স্বাধীন primary evidence ছাড়া এটিকে প্রতিষ্ঠিত etymology বলা হচ্ছে না।</p>
       </div>
     </section>
   </main>;
