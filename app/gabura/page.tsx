@@ -11,6 +11,7 @@ const items=[
 ["administration","Administration","ইউনিয়ন প্রশাসন ও প্রতিষ্ঠান"],
 ["maps","Maps","ঐতিহাসিক ও বর্তমান মানচিত্র"],
 ["timeline","Historical Timeline","সময়রেখায় গাবুরার গুরুত্বপূর্ণ অধ্যায়"],
+["communication","Communication & Access","রাস্তা, নদীপথ, বাঁধ ও মানুষের চলাচল"],
 ];
 
 export default function Gabura(){
