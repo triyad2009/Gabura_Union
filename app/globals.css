@@ -120,3 +120,32 @@ a{-webkit-tap-highlight-color:transparent}
 
 /* PEOPLE SUBSECTIONS */
 .layer-hero{padding:clamp(7rem,15vw,12rem) 0 5rem;background:radial-gradient(circle at 80% 15%,rgba(232,160,92,.1),transparent 30%),#080909}.layer-hero h1{font-size:clamp(4.2rem,11vw,10rem);line-height:.84;letter-spacing:-.065em;margin:1.2rem 0 2rem}.layer-hero h1 em{font-style:normal;font-weight:300;opacity:.68}.layer-hero p{max-width:760px;font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.85;color:rgba(247,247,245,.65)}.layer-meta{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2rem}.layer-meta span{border:1px solid rgba(247,247,245,.12);border-radius:999px;padding:.5rem .75rem;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(247,247,245,.5)}.layer-content{padding:7rem 0}.layer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(247,247,245,.1);border:1px solid rgba(247,247,245,.1)}.layer-grid article{background:#080909;padding:2.4rem;min-height:330px}.layer-grid h2{font-size:clamp(1.7rem,2.8vw,2.7rem);line-height:1;letter-spacing:-.04em;margin:1rem 0}.layer-grid p{color:rgba(247,247,245,.54);line-height:1.8;font-size:.95rem}.layer-facts{padding:7rem 0;background:#0d0f10}.facts-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(3rem,8vw,8rem)}.facts-grid h2{font-size:clamp(2rem,4vw,4rem);letter-spacing:-.05em;line-height:1;margin-top:1rem}.fact-list{border-top:1px solid rgba(247,247,245,.1)}.fact-list div{display:grid;grid-template-columns:45px 1fr;gap:1rem;padding:1.2rem 0;border-bottom:1px solid rgba(247,247,245,.08);color:rgba(247,247,245,.65);line-height:1.5}.fact-list span{font-size:.68rem;color:rgba(247,247,245,.32)}.layer-queue{padding:7rem 0}.layer-queue h2{font-size:clamp(2.2rem,5vw,4.5rem);letter-spacing:-.05em;margin:1rem 0 3rem}.queue-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(247,247,245,.1)}.queue-grid div{display:grid;grid-template-columns:45px 1fr;gap:1rem;padding:1.3rem 0;border-bottom:1px solid rgba(247,247,245,.08);color:rgba(247,247,245,.6)}.queue-grid b{font-size:.68rem;color:rgba(247,247,245,.3)}.layer-footer{padding:2rem 0;border-top:1px solid rgba(247,247,245,.1)}.layer-footer .wrap{display:flex;justify-content:space-between;gap:1rem}.layer-footer a{color:rgba(247,247,245,.55);text-decoration:none;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}@media(max-width:800px){.layer-grid{grid-template-columns:1fr}.facts-grid{grid-template-columns:1fr;gap:3rem}.queue-grid{grid-template-columns:1fr}}@media(max-width:480px){.layer-hero h1{font-size:4.2rem}.layer-grid article{min-height:auto;padding:1.7rem}.layer-content,.layer-facts,.layer-queue{padding:5rem 0}.layer-footer .wrap{flex-direction:column}}
+
+/* FINAL SITE-WIDE POLISH */
+:root{--content:1180px;--glow:rgba(232,161,91,.12)}
+.wrap{width:min(var(--content),calc(100% - 48px))}
+::selection{background:rgba(232,161,91,.28);color:#fff}
+.nav{height:72px;border-color:rgba(255,255,255,.08)}
+.nav:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(232,161,91,.35),transparent);opacity:.5}
+.home-nav,.history-nav{min-height:72px}
+.brand{font-size:12px;letter-spacing:.14em}
+.navlink{font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.eyebrow{font-size:10px;letter-spacing:.2em}
+.home-hero,.layer-hero,.history-hero,.origin-hero,.geo-hero,.river-hero,.communication-hero,.villages-hero{background-color:var(--bg)}
+.home-hero:after,.layer-hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 75%,rgba(232,161,91,.035),transparent 24%)}
+.home-hero-inner,.layer-hero>.wrap{z-index:1}
+.archive-card,.people-card,.climate-card{border:1px solid transparent}
+.archive-card:hover,.people-card:hover,.climate-card:hover{border-color:rgba(232,161,91,.16)}
+.section-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem}
+.section-intro h2{font-family:"Playfair Display","Noto Sans Bengali",serif;font-size:clamp(2.8rem,5vw,5.2rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 0;color:var(--text)}
+.section-intro>p{margin:0;color:rgba(247,247,245,.5);line-height:1.8;max-width:600px}
+.climate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(247,247,245,.1);border:1px solid rgba(247,247,245,.1)}
+.climate-card{background:#080909;padding:2rem;min-height:275px;display:flex;flex-direction:column;transition:background .3s ease,transform .3s ease,border-color .3s ease;position:relative;overflow:hidden}
+.climate-card:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.climate-card:hover{background:#101213;transform:translateY(-2px)}.climate-card:hover:after{transform:scaleX(1)}
+.climate-card>span{color:rgba(247,247,245,.3);font-size:.68rem}.climate-card h3{font-family:"Playfair Display","Noto Sans Bengali",serif;font-size:clamp(2rem,3.4vw,3.4rem);line-height:.95;letter-spacing:-.045em;margin:auto 0 .5rem}.climate-card>b{font-size:.7rem;color:var(--accent);font-weight:500;letter-spacing:.08em}.climate-card p{color:rgba(247,247,245,.5);line-height:1.7;font-size:.9rem;max-width:520px}.climate-card i{margin-top:auto;color:rgba(247,247,245,.38);font-style:normal;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;transition:color .2s ease}.climate-card:hover i{color:var(--text)}
+.home-hero h1,.layer-hero h1,.history-hero h1,.origin-hero h1,.geo-hero h1,.river-hero h1,.communication-hero h1,.villages-hero h1{font-weight:600}
+.footer{border-top:1px solid var(--line)}
+.layer-footer a:hover,.footer a:hover{color:var(--text)}
+@media(max-width:760px){.wrap{width:min(var(--content),calc(100% - 28px))}.section-intro{grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}.climate-grid{grid-template-columns:1fr}.climate-card{min-height:235px;padding:1.5rem}.climate-card h3{font-size:2.4rem}.nav{height:64px}.home-nav,.history-nav{min-height:64px}}
+@media(prefers-reduced-motion:reduce){.climate-card,.archive-card,.people-card{transform:none!important}}
